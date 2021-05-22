@@ -6,5 +6,6 @@
     <string name="surname">Surname</string>
     <string name="phone">Phone</string>
     <string name="birthday">Birthday</string>
+    <string name="email">Email</string>
     <string name="rePassword">Re-enter Password</string>
 </resources>

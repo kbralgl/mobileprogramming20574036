@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.example.donemodevi.R;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText kullanici_adi ;
@@ -20,10 +22,12 @@ public class MainActivity extends AppCompatActivity {
     Button sign_up ;
     TextView yazi_metni ;
     int sayac=1;
+    public static MainActivity main;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        main = this;
         setContentView(R.layout.activity_main);
         defineVariables();
 
@@ -73,9 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
 
-
         });
-
 
     }
 
@@ -86,10 +88,12 @@ public class MainActivity extends AppCompatActivity {
 
         //sayac = Integer.valueOf(yazi_metni2.getText().toString()) + 1;
 
-        if (kullanici_adi2.equals("admin") && sifre2.equals("admin")){
-            Toast.makeText(getApplicationContext(),"Doğru", Toast.LENGTH_LONG).show();
+        if (isUserExist()){
+            Toast.makeText(getApplicationContext(),"Başarıyla Giriş Yaptınız", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+            startActivity(intent);
         }else{
-            Toast.makeText(getApplicationContext(),"Yanlış", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Hatalı Kullanıcı Adı ya da Şifre", Toast.LENGTH_LONG).show();
             //yazi_metni.setText("Sayac : "+(sayac++));
             sayac++;
 
@@ -103,6 +107,19 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    private boolean isUserExist(){
+        List<person> userList = sharedPreferencesFile.getPersonsList();
+        if (userList == null) {
+            return false;
+        }
+
+        for (person person : userList){
+            if (kullanici_adi.getText().toString().equals(person.getUserName()) && sifre.getText().toString().equals(person.getPassword()))
+                return true;
+        }
+        return false;
     }
 
 
