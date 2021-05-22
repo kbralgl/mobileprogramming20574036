@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">donemOdevi</string>
+    <string name="kAdi">Username</string>
+    <string name="Password">Password</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="phone">Phone</string>
+    <string name="birthday">Birthday</string>
+    <string name="rePassword">Re-enter Password</string>
+</resources>
