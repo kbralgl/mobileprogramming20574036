@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
             {
                 Toast.makeText(getApplicationContext(),"3 defa Yanlış girdin", Toast.LENGTH_LONG).show();
                 gonder.setEnabled(false);
+                MainActivity.this.finish();
 
             }
 
