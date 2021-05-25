@@ -2,6 +2,7 @@ package com.example.donemodevi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,13 +24,15 @@ public class signup extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         defineVariables();
-        initView();
-        initEvent();
+        //initView();
+        //initEvent();
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 control();
+                Intent intent = new Intent(signup.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -70,12 +73,12 @@ public class signup extends AppCompatActivity {
 
     }
 
-    private void initView() {
+    /*private void initView() {
         //TODO 3 Java - Xml eşleştirmelerini initView metotu içerisinde yapıyoruz
         signup = (Button) findViewById(R.id.signup);
-    }
+    }*/
 
-    private void initEvent() {
+    /*private void initEvent() {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,5 +90,5 @@ public class signup extends AppCompatActivity {
 
 
         });
-    }
+    }*/
 }
