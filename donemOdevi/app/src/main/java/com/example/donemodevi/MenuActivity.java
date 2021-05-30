@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 public class MenuActivity extends AppCompatActivity {
 
-    ImageButton sinavAyarlari,soruEkle,questionListButton;
+    ImageButton sinavAyarlari,soruEkle,questionListButton,sendExam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,15 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        //Sınav Ekleme
+        sendExam = (ImageButton)findViewById(R.id.sendExam);
+        sendExam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, examAdd.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

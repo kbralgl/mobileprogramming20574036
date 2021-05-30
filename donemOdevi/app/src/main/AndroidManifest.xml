@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DonemOdevi">
-        <activity android:name=".questionList"></activity>
+        <activity android:name=".examAdd"></activity>
+        <activity android:name=".questionList" />
         <activity android:name=".questionAdd" />
         <activity android:name=".questionSettings" />
         <activity android:name=".MenuActivity" />
